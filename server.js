@@ -4,10 +4,10 @@ const path = require('path');
 
 const server = http.createServer((req, res) => {
   if (req.method === 'GET') {
-    let filePath = path.join(__dirname, '../cliente-servidor', req.url);
+    let filePath = '/login.html';
     
     if (req.url === '/') {
-      filePath = path.join(__dirname, '../cliente-servidor/login.html');
+      filePath = '/login.html';
     }
 
     const fileExtension = path.extname(filePath);
