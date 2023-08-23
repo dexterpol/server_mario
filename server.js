@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const cors = require("cors"); // Importe a biblioteca 'cors'
+const cors = require("cors"); 
 
 const server = http.createServer((req, res) => {
   if (req.method === "GET") {
@@ -44,7 +44,7 @@ const server = http.createServer((req, res) => {
 
         res.writeHead(200, {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*", // Configurado para permitir qualquer origem
+          "Access-Control-Allow-Origin": "*",
         });
         res.end(
           JSON.stringify({
@@ -63,7 +63,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-// Use o middleware 'cors' para configurar as regras do CORS
+
 server.use(cors());
 
 const PORT = 3000;
