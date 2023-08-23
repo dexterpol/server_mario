@@ -37,14 +37,12 @@ const server = http.createServer((req, res) => {
       try {
         const parsedData = JSON.parse(data);
         
-        
         const nome = parsedData.nome;
         const email = parsedData.email;
         const senha = parsedData.senha;
 
-        
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ message: `Cadastro realizado para ${nome} com sucesso!` }));
+        res.end(JSON.stringify({ message: `Cadastro realizado para ${nome} com sucesso!`, success: true }));
       } catch (error) {
         console.error('Erro ao analisar JSON:', error);
         res.writeHead(400);
